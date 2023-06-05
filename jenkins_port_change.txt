@@ -1,0 +1,30 @@
+To change the port that Jenkins listens on, you'll need to modify the Jenkins configuration file. Here's how you can do it:
+
+Step 1: Open the Jenkins configuration file
+```
+sudo nano /etc/default/jenkins
+```
+
+Step 2: Locate the line that starts with `HTTP_PORT`
+By default, it should look like this:
+```
+HTTP_PORT=8080
+```
+
+Step 3: Change the port number
+Edit the `HTTP_PORT` value to the desired port number. For example, if you want to change it to port 8888, modify the line as follows:
+```
+HTTP_PORT=8888
+```
+
+Step 4: Save the changes and exit the editor
+Press `Ctrl+O` to save the file, and then press `Ctrl+X` to exit the editor.
+
+Step 5: Restart Jenkins service
+```
+sudo systemctl restart jenkins
+```
+
+After restarting the Jenkins service, it will start listening on the new port you have specified. You can access Jenkins using the new port by visiting `http://localhost:<new-port>` or `http://<your-server-IP>:<new-port>` in your web browser.
+
+Make sure to update any firewall or networking configurations to allow traffic on the new port if necessary.
